@@ -9,8 +9,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 public class SquareServlet extends HttpServlet {
-	public void doPost(HttpServletRequest req,HttpServletResponse resp) throws IOException, ServletException  {
-		int number = (int)req.getAttribute("k");
+	public void doGet(HttpServletRequest req,HttpServletResponse resp) throws IOException, ServletException  {
+		int number = Integer.parseInt(req.getParameter("k"));
 		number=number*number;
 		PrintWriter out= resp.getWriter();
 		out.println("Square is ="+number);
